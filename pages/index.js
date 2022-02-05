@@ -1,14 +1,6 @@
-/* Components */
-import Link from "../src/components/Link";
+import HomeScreen from "../src/components/screens/HomeScreens";
 
-export default function HomePage(){
-    return(
-        <>
-            <h1>Home page do site</h1>
-            <Link href="/faq">Ir para o FAQ</Link>
-        </>
-    );
-}
+export default HomeScreen;
 
 /* 
         Anotações:
