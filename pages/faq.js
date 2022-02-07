@@ -1,16 +1,17 @@
-import React from "react";
-import Footer from "../src/components/generic/Footer";
+import FAQScreen from "../src/components/screens/FAQScreen";
 
-/* Components */
-import Link from "../src/components/Link";
+export default FAQScreen;
 
-export default function FaqPage(){
-    return(
-        <React.Fragment>
-            <h1>Página do FAQ</h1>
-            <Link href="/">Voltar para home page</Link>
+export async function getStaticProps() {
+    const URL_DATA_FAQ = "https://gist.githubusercontent.com/omariosouto/0ceab54bdd8182cbd1a4549d32945c1a/raw/578ad1e8e5296fa048e3e7ff6b317f7497b31ad9/alura-cases-faq.json";
 
-            <Footer />
-        </React.Fragment>
-    );
+    const res = await fetch(URL_DATA_FAQ);
+    const data = await res.json();
+
+    return {
+      props: {
+          dataFaq: data
+      },
+    }
 }
+  
