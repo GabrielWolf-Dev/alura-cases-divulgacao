@@ -33,6 +33,49 @@ Arquitetura de aplicação
 Lidar com arquivos estáticos
 * Conseguimos acessar os arquivos dentro da pasta public diretamente pela URL da aplicação.
 
+### Módulo 4:
+getStaticProps
+* Essa função busca os dados durante o build. Ou seja, essa função é executada apenas uma vez.
+
+getServerSideProps
+* Essa função busca os dados do lado do servidor para cada requisição.
+
+Ao modificar o título da página
+* Com o componente <Head> conseguimos editar os metadados de cada página, como, por exemplo, o título.
+
+----------------------------------------------------------------
+
+### getStaricProps(SSG) e getServerSideProps(SSR):
+<strong>getStaticProps:</strong>
+<br>
+* Roda <strong>SOMENTE</strong> no cuild time;
+* Gera os dados diretamente no conteúdo HTML(De maneira estática, assim o conteúdo é carregado junto com outras coisas estáticas na página), a partir do script NEXT_DATA se vermos o código fonte no browser;
+* Ótimo para já colocar o conteúdo principal da página ou do app, no caso do youtube o vídeo é uma das primeiras coisas carregadas, no FAQ os textos vindos da API com as perguntas e respostas.
+* Deste modo, como é estático podemos hospedar no Github Pages por conta do build gerar todo o código estático com nenhuma interação com o front, não é atoa que se caso a API cair ou atualizar, a base de dados do microsserviço vai estar no build gerado, se quiser atualizar tem que gerar outro build com "report".
+<br>
+----------------------------------------------------------------
+<strong>getServerSideProps</strong>
+<br>
+* Roda a cada acesso do usuário;
+* Lado "server-side", ou seja, se algum dado dentro deste código mudar, ele é atualizado além do acesso do usuário;
+* Então, diferente do StaticProps, é preciso de um servidor pra gerenciar este serviço back-end do Next.js para atualizar os dados e realmentre funcionar a função.
+<br>
+----------------------------------------------------------------
+No geral sempre opte por páginas estáticas, somente utilize dinâmicas se precisar mesmo.
+Pois há vários benefícios com páginas estáticas como "cachear" as páginas por conta de todo conteúdo estar contido dentro do HTML, maior segurança pois é bem mais difícil de um cracker conseguir acessar algo, performance, SEO, etc...
+<br>
+[Link para saber mais(Isso está diretamente ligado com a JamStack)](https://jamstack.org/why-jamstack/)
+
+### Módulo 5:
+O que é o next.config.js
+* Neste arquivo, podemos modificar algumas configurações, como, por exemplo, redirects e adição do trailing slash no final da URL automaticamente.
+
+Como fazer o deploy do seu projeto Next.js
+* A criadora do framework (Vercel) oferece uma plataforma de hosting de forma gratuita e integrada ao GitHub.
+
+Benefícios de hospedar na Vercel
+* A plataforma oferece fácil integração com plataformas de versionamento de código, assim como HTTPs e domínios customizados.
+
 ## Um pouco sobre a evolução Front-End para entender o que o Next soluciona:
 
 O Next renderiza o conteúdo via servidor(um serviço em Node) independente de ser SSR ou SSG, mas o SSR(Server Side Rendering) renderizado no framework é totalmente diferente do que tinhamos antigamente no SSR com PHP, Java, Node, C#, etc...

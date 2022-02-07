@@ -1,8 +1,20 @@
-import Footer from '../../generic/Footer'
-import Link from '../../Link'
 import { theme } from '../../theme/theme';
-import { Image, Box, Text, Icon, Input, Button } from '../../theme/components';
 
+
+/* Components */
+import Footer from '../../generic/Footer';
+import Link from '../../Link';
+import TitleHead from '../../TitleHead';
+import {
+  Image,
+  Box,
+  Text,
+  Icon,
+  Input,
+  Button
+} from '../../theme/components';
+
+/* Assets */
 const LOGO_ALURA_URL = '/assets/svg/alura-logo.svg';
 const SIDE_IMAGE_URL = '/assets/img/alura-cases.png';
 
@@ -95,226 +107,229 @@ function SideImage() {
 
 export default function HomeScreen() {
   return (
-    <Box>
-      <Box
-        as="main"
-        styleSheet={{
-          flex: 1,
-          backgroundColor: theme.colors.neutral["050"],
-        }}
-      >
+    <>
+      <TitleHead>Home Page -- Alura Cases</TitleHead>
+      <Box>
         <Box
+          as="main"
           styleSheet={{
-            overflow: 'hidden',
-            position: {
-              lg: 'relative',
-            },
-            paddingTop: {
-              xs: theme.space.x6,
-              sm: theme.space.x12,
-            },
-            paddingVertical: {
-              md: theme.space.x20,
-              lg: theme.space.x24,
-            },
+            flex: 1,
+            backgroundColor: theme.colors.neutral["050"],
           }}
         >
           <Box
             styleSheet={{
-              marginHorizontal: 'auto',
-              paddingHorizontal: {
-                xs: theme.space.x4,
-                sm: theme.space.x6,
-                lg: theme.space.x8,
+              overflow: 'hidden',
+              position: {
+                lg: 'relative',
               },
-              maxWidth: {
-                sm: theme.space.xcontainer_md,
-                lg: theme.space.xcontainer_lg,
+              paddingTop: {
+                xs: theme.space.x6,
+                sm: theme.space.x12,
               },
-              display: {
-                lg: "grid",
-              },
-              gap: {
+              paddingVertical: {
+                md: theme.space.x20,
                 lg: theme.space.x24,
               },
-              gridTemplateColumns: {
-                lg: "repeat(2, minmax(0, 1fr))",
-              }
             }}
           >
-            <Box>
+            <Box
+              styleSheet={{
+                marginHorizontal: 'auto',
+                paddingHorizontal: {
+                  xs: theme.space.x4,
+                  sm: theme.space.x6,
+                  lg: theme.space.x8,
+                },
+                maxWidth: {
+                  sm: theme.space.xcontainer_md,
+                  lg: theme.space.xcontainer_lg,
+                },
+                display: {
+                  lg: "grid",
+                },
+                gap: {
+                  lg: theme.space.x24,
+                },
+                gridTemplateColumns: {
+                  lg: "repeat(2, minmax(0, 1fr))",
+                }
+              }}
+            >
               <Box>
-                <Image
-                  styleSheet={{
-                    width: "auto",
-                    height: theme.space.x11,
-                  }}
-                  src={LOGO_ALURA_URL}
-                  alt="Logo Alura"
-                />
-              </Box>
-              <Box
-                styleSheet={{
-                  marginTop: {
-                    xs: theme.space.x16,
-                    sm: theme.space.x20,
-                  },
-                }}
-              >
                 <Box>
-                  <Link
-                    href="/faq"
+                  <Image
                     styleSheet={{
-                      display: "inline-flex",
-                      alignItems: {
-                        xs: "flex-start",
-                        sm: "center",
-                      },
-                      flexDirection: {
-                        xs: "column",
-                        sm: "row",
-                      },
+                      width: "auto",
+                      height: theme.space.x11,
                     }}
-                  >
-                    <Text
+                    src={LOGO_ALURA_URL}
+                    alt="Logo Alura"
+                  />
+                </Box>
+                <Box
+                  styleSheet={{
+                    marginTop: {
+                      xs: theme.space.x16,
+                      sm: theme.space.x20,
+                    },
+                  }}
+                >
+                  <Box>
+                    <Link
+                      href="/faq"
                       styleSheet={{
-                        textVariant: theme.typography.variants.body4,
-                        fontWeight: "600",
-                        borderRadius: theme.space.x64,
-                        color: theme.colors.primary["400"],
-                        backgroundColor: theme.colors.primary["100"],
-                        paddingHorizontal: theme.space['x2.5'],
-                        paddingVertical: theme.space['x1'],
-                        marginRight: theme.space.x2,
-                        marginBottom: {
-                          xs: theme.space.x2,
-                          sm: theme.space.x0
+                        display: "inline-flex",
+                        alignItems: {
+                          xs: "flex-start",
+                          sm: "center",
+                        },
+                        flexDirection: {
+                          xs: "column",
+                          sm: "row",
                         },
                       }}
                     >
-                      O que tem de novo?
-                    </Text>
-                    <Text
-                      styleSheet={{
-                        textVariant: theme.typography.variants.body4,
-                        fontWeight: "600",
-                        display: 'inline-flex',
-                        borderRadius: theme.space.x64,
-                        color: theme.colors.primary["400"],
-                        alignItems: 'center',
-                      }}
-                    >
-                      <Text>Confira as principais dúvidas</Text>
-                      <Icon
+                      <Text
                         styleSheet={{
-                          iconVariant: 'chevronRight',
-                          marginLeft: theme.space.xpx,
+                          textVariant: theme.typography.variants.body4,
+                          fontWeight: "600",
+                          borderRadius: theme.space.x64,
+                          color: theme.colors.primary["400"],
+                          backgroundColor: theme.colors.primary["100"],
+                          paddingHorizontal: theme.space['x2.5'],
+                          paddingVertical: theme.space['x1'],
+                          marginRight: theme.space.x2,
+                          marginBottom: {
+                            xs: theme.space.x2,
+                            sm: theme.space.x0
+                          },
                         }}
-                        aria-hidden="true"
-                      />
-                    </Text>
-                  </Link>
-                </Box>
-                <Box
-                  styleSheet={{
-                    marginTop: theme.space.x6,
-                    maxWidth: theme.space.xcontainer_sm,
-                  }}
-                >
-                  <Text
-                    as="h1"
-                    styleSheet={{
-                      textVariant: theme.typography.variants.heading1,
-                      color: theme.colors.neutral["900"],
-                    }}
-                  >
-                    Alura Cases
-                  </Text>
-                  <Text
-                    as="p"
-                    styleSheet={{
-                      textVariant: theme.typography.variants.body1,
-                      color: theme.colors.neutral["500"],
-                      marginTop: theme.space.x6,
-                    }}
-                  >
-                    Aqui você vai ter acesso a discussões avançadas: as principais decisões sobre arquitetura e design de sistemas. Aprenda através das descobertas que as principais empresas de tecnologia enfrentam!
-                  </Text>
-                  <Text
-                    as="p"
-                    styleSheet={{
-                      textVariant: theme.typography.variants.body1,
-                      color: theme.colors.neutral["500"],
-                      marginTop: theme.space.x6,
-                    }}
-                  >
-                    Quer testar antes de todo mundo?
-                  </Text>
-                </Box>
-                <Box
-                  as="form"
-                  action="#"
-                  styleSheet={{
-                    display: {
-                      sm: 'flex',
-                    },
-                    marginTop: theme.space.x12,
-                    width: {
-                      sm: theme.space['x1/1'],
-                    },
-                    maxWidth: {
-                      sm: theme.space.xcontainer_lg,
-                    }
-                  }}
-                >
+                      >
+                        O que tem de novo?
+                      </Text>
+                      <Text
+                        styleSheet={{
+                          textVariant: theme.typography.variants.body4,
+                          fontWeight: "600",
+                          display: 'inline-flex',
+                          borderRadius: theme.space.x64,
+                          color: theme.colors.primary["400"],
+                          alignItems: 'center',
+                        }}
+                      >
+                        <Text>Confira as principais dúvidas</Text>
+                        <Icon
+                          styleSheet={{
+                            iconVariant: 'chevronRight',
+                            marginLeft: theme.space.xpx,
+                          }}
+                          aria-hidden="true"
+                        />
+                      </Text>
+                    </Link>
+                  </Box>
                   <Box
                     styleSheet={{
-                      minWidth: 0,
-                      flex: 1,
+                      marginTop: theme.space.x6,
+                      maxWidth: theme.space.xcontainer_sm,
                     }}
                   >
                     <Text
-                      as="label"
-                      htmlFor="email"
+                      as="h1"
                       styleSheet={{
-                        srOnly: true,
+                        textVariant: theme.typography.variants.heading1,
+                        color: theme.colors.neutral["900"],
                       }}
                     >
-                      Email address
+                      Alura Cases
                     </Text>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="Coloque seu email aqui"
-                    />
+                    <Text
+                      as="p"
+                      styleSheet={{
+                        textVariant: theme.typography.variants.body1,
+                        color: theme.colors.neutral["500"],
+                        marginTop: theme.space.x6,
+                      }}
+                    >
+                      Aqui você vai ter acesso a discussões avançadas: as principais decisões sobre arquitetura e design de   sistemas. Aprenda através das descobertas que as principais empresas de tecnologia enfrentam!
+                    </Text>
+                    <Text
+                      as="p"
+                      styleSheet={{
+                        textVariant: theme.typography.variants.body1,
+                        color: theme.colors.neutral["500"],
+                        marginTop: theme.space.x6,
+                      }}
+                    >
+                      Quer testar antes de todo mundo?
+                    </Text>
                   </Box>
-                  <Box 
+                  <Box
+                    as="form"
+                    action="#"
                     styleSheet={{
-                      marginTop: {
-                        xs: theme.space.x4,
-                        sm: theme.space.x0,
+                      display: {
+                        sm: 'flex',
                       },
-                      marginLeft: {
-                        sm: theme.space.x3,
+                      marginTop: theme.space.x12,
+                      width: {
+                        sm: theme.space['x1/1'],
                       },
+                      maxWidth: {
+                        sm: theme.space.xcontainer_lg,
+                      }
                     }}
                   >
-                    <Button
-                      type="submit"
-                      // button variant
+                    <Box
+                      styleSheet={{
+                        minWidth: 0,
+                        flex: 1,
+                      }}
                     >
-                      Cadastrar
-                    </Button>
+                      <Text
+                        as="label"
+                        htmlFor="email"
+                        styleSheet={{
+                          srOnly: true,
+                        }}
+                      >
+                        Email address
+                      </Text>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="Coloque seu email aqui"
+                      />
+                    </Box>
+                    <Box 
+                      styleSheet={{
+                        marginTop: {
+                          xs: theme.space.x4,
+                          sm: theme.space.x0,
+                        },
+                        marginLeft: {
+                          sm: theme.space.x3,
+                        },
+                      }}
+                    >
+                      <Button
+                        type="submit"
+                        // button variant
+                      >
+                        Cadastrar
+                      </Button>
+                    </Box>
                   </Box>
                 </Box>
               </Box>
             </Box>
-          </Box>
 
-          <SideImage />
+            <SideImage />
+          </Box>
         </Box>
-      </Box>
-      <Footer />
+        <Footer />
     </Box>
+    </>
   )
 }
