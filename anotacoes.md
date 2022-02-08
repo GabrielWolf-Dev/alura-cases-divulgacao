@@ -52,15 +52,17 @@ Ao modificar o título da página
 * Gera os dados diretamente no conteúdo HTML(De maneira estática, assim o conteúdo é carregado junto com outras coisas estáticas na página), a partir do script NEXT_DATA se vermos o código fonte no browser;
 * Ótimo para já colocar o conteúdo principal da página ou do app, no caso do youtube o vídeo é uma das primeiras coisas carregadas, no FAQ os textos vindos da API com as perguntas e respostas.
 * Deste modo, como é estático podemos hospedar no Github Pages por conta do build gerar todo o código estático com nenhuma interação com o front, não é atoa que se caso a API cair ou atualizar, a base de dados do microsserviço vai estar no build gerado, se quiser atualizar tem que gerar outro build com "report".
-<br>
+    
 ----------------------------------------------------------------
+    
 <strong>getServerSideProps</strong>
 <br>
 * Roda a cada acesso do usuário;
 * Lado "server-side", ou seja, se algum dado dentro deste código mudar, ele é atualizado além do acesso do usuário;
 * Então, diferente do StaticProps, é preciso de um servidor pra gerenciar este serviço back-end do Next.js para atualizar os dados e realmentre funcionar a função.
-<br>
+    
 ----------------------------------------------------------------
+    
 No geral sempre opte por páginas estáticas, somente utilize dinâmicas se precisar mesmo.
 Pois há vários benefícios com páginas estáticas como "cachear" as páginas por conta de todo conteúdo estar contido dentro do HTML, maior segurança pois é bem mais difícil de um cracker conseguir acessar algo, performance, SEO, etc...
 <br>
